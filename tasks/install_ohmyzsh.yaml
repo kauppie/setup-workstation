@@ -1,0 +1,10 @@
+---
+- name: Install zsh
+  ansible.builtin.dnf:
+    name: zsh
+    state: present
+
+- name: Install oh-my-zsh
+  ansible.builtin.shell: "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
+  args:
+    creates: "{{ ansible_user_dir }}/.oh-my-zsh"

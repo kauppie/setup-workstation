@@ -1,0 +1,20 @@
+---
+- hosts: all
+  
+  roles:
+    - name: Install Docker
+      role: geerlingguy.docker
+
+  vars:
+    docker_users:
+      - "{{ ansible_user }}"
+
+  tasks:
+    - name: Install C and C++ tools
+      include_tasks: tasks/install_c_and_cpp_tools.yaml
+
+    - name: Install zsh and oh-my-zsh
+      include_tasks: tasks/install_ohmyzsh.yaml
+
+    - name: Install Visual Studio Code
+      include_tasks: tasks/install_vscode.yaml

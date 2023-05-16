@@ -1,0 +1,10 @@
+---
+- name: Install gcc-c++
+  ansible.builtin.dnf:
+    name: gcc-c++
+    state: present
+
+- name: Install cmake
+  ansible.builtin.dnf:
+    name: cmake
+    state: present
