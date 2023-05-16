@@ -5,16 +5,24 @@
     - name: Install Docker
       role: geerlingguy.docker
 
+    - name: Install Go
+      role: geerlingguy.go
+
   vars:
     docker_users:
       - "{{ ansible_user }}"
+    docker_compose_version: "v2.18.0"
+    go_version: "1.19.2"
 
   tasks:
     - name: Install C and C++ tools
-      include_tasks: tasks/install_c_and_cpp_tools.yaml
+      include_tasks: tasks/install_c_and_cpp.yaml
 
     - name: Install zsh and oh-my-zsh
       include_tasks: tasks/install_ohmyzsh.yaml
 
     - name: Install Visual Studio Code
       include_tasks: tasks/install_vscode.yaml
+
+    - name: Install tools
+      include_tasks: tasks/install_tools.yaml
