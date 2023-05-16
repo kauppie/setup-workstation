@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: localhost
   
   roles:
     - name: Install Docker
@@ -16,13 +16,13 @@
 
   tasks:
     - name: Install C and C++ tools
-      include_tasks: tasks/install_c_and_cpp.yaml
+      import_tasks: tasks/install_c_and_cpp.yaml
 
     - name: Install zsh and oh-my-zsh
-      include_tasks: tasks/install_ohmyzsh.yaml
+      import_tasks: tasks/install_ohmyzsh.yaml
 
     - name: Install Visual Studio Code
-      include_tasks: tasks/install_vscode.yaml
+      import_tasks: tasks/install_vscode.yaml
 
     - name: Install tools
-      include_tasks: tasks/install_tools.yaml
+      import_tasks: tasks/install_tools.yaml
