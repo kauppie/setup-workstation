@@ -16,7 +16,7 @@
 
   tasks:
     - name: Setup environment
-      import_tasks: tasks/setup-environment.yaml
+      import_tasks: tasks/setup_environment.yaml
 
     - name: Install C and C++ tools
       import_tasks: tasks/install_c_and_cpp.yaml
