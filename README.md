@@ -4,13 +4,13 @@ Setup Fedora how I like it.
 
 # How?
 
-Install requirements:
+Install Ansible.
 
 ```
-$ ansible-galaxy install -r requirements.yml
+$ python3 -m pip install --user ansible
 ```
 
-Run playbook locally:
+Run the script. This installs Ansible dependencies and runs the playbook.
 
 ```
 $ ./run.sh
