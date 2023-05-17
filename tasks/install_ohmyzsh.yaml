@@ -9,3 +9,9 @@
   ansible.builtin.shell: "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
   args:
     creates: "{{ ansible_user_dir }}/.oh-my-zsh"
+
+- name: Change shell to zsh
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh
+  become: true
