@@ -3,8 +3,10 @@
   ansible.builtin.dnf:
     name: gcc-c++
     state: present
+  become: true
 
 - name: Install cmake
   ansible.builtin.dnf:
     name: cmake
     state: present
+  become: true

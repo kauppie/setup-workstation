@@ -10,11 +10,14 @@
 
   vars:
     docker_users:
-      - "{{ ansible_user }}"
+      - "{{ ansible_user_id }}"
     docker_compose_version: "v2.18.0"
     go_version: "1.19.2"
 
   tasks:
+    - name: Setup environment
+      import_tasks: tasks/setup-environment.yaml
+
     - name: Install C and C++ tools
       import_tasks: tasks/install_c_and_cpp.yaml
 

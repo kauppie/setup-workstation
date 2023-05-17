@@ -7,11 +7,11 @@ Setup Fedora how I like it.
 Install requirements:
 
 ```
-ansible-galaxy install -r requirements.yml
+$ ansible-galaxy install -r requirements.yml
 ```
 
 Run playbook locally:
 
 ```
-ansible-playbook playbook.yml
+$ ./run.sh
 ```

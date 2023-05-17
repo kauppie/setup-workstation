@@ -15,9 +15,10 @@
 
 - name: Check update
   ansible.builtin.dnf:
-    update_cache: yes
+    update_cache: true
 
 - name: Install Visual Studio Code
   ansible.builtin.dnf:
     name: code
     state: present
+  become: true

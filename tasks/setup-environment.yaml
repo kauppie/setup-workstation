@@ -1,0 +1,9 @@
+---
+- name: Add user to sudoers
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers
+    state: present
+    regexp: "^{{ ansible_user_id }} ALL="
+    line: "{{ ansible_user_id }} ALL=(ALL) NOPASSWD: ALL"
+    validate: /usr/sbin/visudo -cf %s
+  become: true
