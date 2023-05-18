@@ -18,8 +18,8 @@
     - name: Setup environment
       import_tasks: tasks/setup_environment.yaml
 
-    - name: Install C and C++ tools
-      import_tasks: tasks/install_c_and_cpp.yaml
+    - name: Install Programming Tools
+      import_tasks: tasks/install_programming_tools.yaml
 
     - name: Install zsh and oh-my-zsh
       import_tasks: tasks/install_ohmyzsh.yaml

@@ -10,3 +10,8 @@
     name: cmake
     state: present
   become: true
+
+- name: Install Rust and its toolchain
+  ansible.builtin.command: "curl https://sh.rustup.rs -sSf | sh"
+  args:
+    creates: "{{ ansible_user_dir }}/.cargo/bin/rustup"
