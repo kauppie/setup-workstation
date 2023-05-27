@@ -14,9 +14,23 @@
     docker_compose_version: "v2.18.0"
     go_version: "1.19.2"
 
+  vars_prompt:
+    - name: git_user_name
+      prompt: Enter your git user name
+      private: false
+      unsafe: true
+
+    - name: git_user_email
+      prompt: Enter your git user email
+      private: false
+      unsafe: true
+
   tasks:
     - name: Setup environment
       import_tasks: tasks/setup_environment.yaml
+
+    - name: Setup git
+      import_tasks: tasks/setup_git.yaml
 
     - name: Install Programming Tools
       import_tasks: tasks/install_programming_tools.yaml
